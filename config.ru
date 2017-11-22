@@ -1,8 +1,3 @@
-
-use Rack::Auth::Basic, 'Restricted Area' do |username, password|
-  [username, password] == %w(fenwick pioneer)
-end
-
 use Rack::Static,
     urls: ['/'],
     root: './',
