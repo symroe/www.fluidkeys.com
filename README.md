@@ -1,4 +1,4 @@
-# Co-op starter kit
+# Co-op Middleman Template
 
 ## How to use this
 
