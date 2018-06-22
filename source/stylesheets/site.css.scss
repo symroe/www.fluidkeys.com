@@ -1,1 +1,132 @@
 @import "sassline-base";
+
+$white: #ffffff;
+$dark-grey: #232732;
+$button-primary: #d33d5c;
+$button-hover: #3DA450;
+
+header.typeset {
+  background: $dark-grey;
+  padding: 1rem;
+  h1 {
+    color: $white;
+    font-size: 1.5em;
+  }
+}
+
+.hero {
+  background: $dark-grey;
+  padding: 4rem 1rem;
+  color: $white;
+  
+  .container {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+    .content {
+      width: 50%;
+    }
+    .illustration {
+      width: 50%;
+      margin-left: 2rem;
+      img {
+        position: absolute;
+        width: 65%;
+      }
+    }
+  }
+
+  h1 {
+    color: $white;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: normal;
+  }
+}
+
+.challenge, .solution {
+  padding-top: 8rem;
+  .container {
+    margin: 0 auto;
+    max-width: 70%;
+    .content {
+      width: 50%;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+    color: $button-primary;
+    font-weight: normal;
+  }
+}
+
+.solution {
+  .container {
+    display: flex;
+    .feature {
+      width: 33%;
+      margin: 0 1rem;
+      img {
+        display: block;
+        margin: auto;
+        height: 60px;
+        margin-top: 1rem;
+      }
+      h3 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  padding-bottom: 8rem;
+}
+
+footer {
+  background: $dark-grey;
+  padding: 1rem;
+  height: 8rem;
+}
+
+form {
+  label {
+    display: none;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    @include breakpoint(break-1) {
+      width: 100%;
+    }
+    input[type="text"] {
+      font-size: 1em;
+      padding: 1rem 1rem;
+      margin-right: 1rem;
+      flex: 1;
+      border: 1px solid $dark-grey;
+    }
+    input[type="submit"] {
+      font-size: 1em;
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border: 0;
+      background-color: $button-primary;
+      color: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), $dark-grey 0px 0px 1px inset;
+      transition: all 0.15s linear;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background: $button-hover;
+        border: 0;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5), #505050 0px 0px 1px inset;
+      }
+    }
+  }
+  margin-bottom: 4rem;
+}
