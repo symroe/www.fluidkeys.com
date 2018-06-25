@@ -45,13 +45,10 @@ header.typeset {
 }
 
 .challenge, .solution {
-  padding-top: 8rem;
+  padding-top: 4rem;
   .container {
     margin: 0 auto;
     max-width: 70%;
-    .content {
-      width: 50%;
-    }
   }
   h2 {
     text-align: center;
@@ -63,10 +60,40 @@ header.typeset {
   }
 }
 
+.challenge {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    h2 {
+      max-width: 100%;
+    }
+    .content {
+      flex: 1;
+      max-width: 58%;
+    }
+    .illustration {
+      flex: 1;
+      max-width: 42%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
 .solution {
   .container {
     display: flex;
+    flex-wrap: wrap;
+    .content {
+      max-width: 100%;
+      img {
+        display: block;
+        margin: 0 auto 2rem auto;
+      }
+    }
     .feature {
+      flex: 1;
       width: 33%;
       margin: 0 1rem;
       img {
@@ -77,11 +104,26 @@ header.typeset {
       }
       h3 {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
       }
     }
   }
   padding-bottom: 8rem;
+}
+
+.final-cta {
+  background: $dark-grey;
+  padding: 4rem 0;
+  .container {
+    max-width: 50%;
+    margin: 0 auto;
+    color: $white;
+    h2 {
+      color: $white;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 footer {
@@ -91,25 +133,19 @@ footer {
 }
 
 form {
-  label {
-    display: none;
-  }
   div {
-    display: flex;
-    flex-direction: row;
-    @include breakpoint(break-1) {
-      width: 100%;
-    }
     input[type="text"] {
       font-size: 1em;
       padding: 1rem 1rem;
       margin-right: 1rem;
-      flex: 1;
       border: 1px solid $dark-grey;
+      width: 100%;
     }
     input[type="submit"] {
+      margin-top: 0.5rem;
+      width: 100%;
       font-size: 1em;
-      display: inline-block;
+      display: block;
       padding: 1rem 1.5rem;
       text-align: center;
       border: 0;
