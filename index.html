@@ -109,6 +109,65 @@
 
   </div>
 </section>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+function setupEventHandlers() {
+  var forms = document.getElementsByTagName('form');
+  for(var i = 0 ; i < forms.length ; ++i) {
+    forms[i].addEventListener('submit', handleFormSubmit);
+  }
+}
+
+function handleFormSubmit(event) {
+  // this is a bit tricksy, since submitting forms causes the page to unload
+  // and stop javascript running.
+  // See:
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
+
+  var form = event.target,
+      // Keeps track of whether or not the form has been submitted.
+      // This prevents the form from being submitted twice in cases
+      // where `hitCallback` fires normally.
+      formSubmitted = false;
+
+  // Prevents the browser from submitting the form
+  // and thus unloading the current page.
+  event.preventDefault();
+
+  setTimeout(submitForm, 1000);  // in case the GA hit callback never fires
+
+  function submitForm() {
+    if (!formSubmitted) {
+      formSubmitted = true;
+      console.log("calling form.submit()");
+      form.submit();
+    }
+  }
+
+  ga('send', 'event', {
+    eventCategory: 'Sign up form',
+    eventAction: 'form_submit',
+    eventLabel: form.id,
+    hitCallback: function() {
+      console.debug("Got GA event hit callback");
+      submitForm();
+    }
+  });
+
+}
+
+ready(setupEventHandlers);
+
+</script>
     <script>
   var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
   if (dnt != "1" && dnt != "yes") {
