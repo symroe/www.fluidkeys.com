@@ -692,7 +692,7 @@ header.typeset {
 
 form {
   margin-bottom: 4rem; }
-  form div input[type="text"] {
+  form div input[type="email"] {
     font-size: 1em;
     padding: 1rem 1rem;
     border: 1px solid #232732;
