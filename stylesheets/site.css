@@ -543,6 +543,9 @@ a {
   -webkit-font-feature-settings: 'onum', 'kern';
           font-feature-settings: 'onum', 'kern'; }
 
+body {
+  overflow-x: hidden; }
+
 header.typeset {
   background: #232732;
   padding: 1rem; }
@@ -645,8 +648,11 @@ header.typeset {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between; } }
-  .solution .container .content img {
-    max-width: 100%;
+  .solution .container img.screencast {
+    border-radius: 1rem;
+    background: #211f1c;
+    padding: 0.5rem;
+    max-width: 70%;
     display: block;
     margin: 0 auto 2rem auto; }
   .solution .container .feature {
@@ -686,7 +692,6 @@ form {
   form div input[type="text"] {
     font-size: 1em;
     padding: 1rem 1rem;
-    margin-right: 1rem;
     border: 1px solid #232732;
     width: 100%; }
   form div input[type="submit"] {
@@ -704,7 +709,8 @@ form {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4), #232732 0px 0px 1px inset;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
-    outline: none; }
+    outline: none;
+    cursor: pointer; }
     form div input[type="submit"]:hover, form div input[type="submit"]:focus {
       background: #3DA450;
       border: 0;
