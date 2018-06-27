@@ -5,6 +5,10 @@ $dark-grey: #232732;
 $button-primary: #d33d5c;
 $button-hover: #3DA450;
 
+body {
+  overflow-x: hidden;
+}
+
 header.typeset {
   background: $dark-grey;
   padding: 1rem;
