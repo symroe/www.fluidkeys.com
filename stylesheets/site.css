@@ -652,9 +652,12 @@ header.typeset {
     border-radius: 1rem;
     background: #211f1c;
     padding: 0.5rem;
-    max-width: 70%;
+    max-width: 100%;
     display: block;
     margin: 0 auto 2rem auto; }
+    @media screen and (min-width: 40em) {
+      .solution .container img.screencast {
+        max-width: 70%; } }
   .solution .container .feature {
     margin-top: 1em;
     width: 100%; }
