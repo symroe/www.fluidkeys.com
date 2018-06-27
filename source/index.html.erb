@@ -11,7 +11,7 @@ title: Master PGP for your team with Fluidkeys
     <div class="content">
       <h1>Master PGP for your team</h1>
       <p>Implement best security practices and demonstrate your team’s expertise with PGP.</p>
-      <%= partial "signup_form" %>
+      <%= partial "signup_form", locals: { form_id: "header-sign-up" } %>
     </div>
     <div class="illustration">
       <%= image_tag 'github.png' %>
@@ -81,7 +81,7 @@ title: Master PGP for your team with Fluidkeys
 <section class="typeset final-cta">
   <div class="container">
     <h2>Sign up for early access and get a free report about your team’s PGP&nbsp;practices</h2>
-    <%= partial "signup_form" %>
+    <%= partial "signup_form", locals: { form_id: "footer-sign-up" } %>
   </div>
 </section>
 
