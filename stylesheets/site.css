@@ -636,10 +636,25 @@ header.typeset {
 .challenge .container .illustration img {
   max-width: 100%; }
 
-.solution {
+.solution .container img.screencast {
+  border-radius: 1rem;
+  background: #211f1c;
+  padding: 0.5rem;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 2rem auto; }
+  @media screen and (min-width: 40em) {
+    .solution .container img.screencast {
+      max-width: 70%; } }
+
+.features {
+  margin: 0 3rem;
   padding-bottom: 8rem; }
   @media screen and (min-width: 40em) {
-    .solution .container {
+    .features {
+      margin: 0 5rem; } }
+  @media screen and (min-width: 40em) {
+    .features .container {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -648,30 +663,20 @@ header.typeset {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between; } }
-  .solution .container img.screencast {
-    border-radius: 1rem;
-    background: #211f1c;
-    padding: 0.5rem;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto 2rem auto; }
-    @media screen and (min-width: 40em) {
-      .solution .container img.screencast {
-        max-width: 70%; } }
-  .solution .container .feature {
-    margin-top: 1em;
+  .features .container .feature {
+    margin-top: 3rem;
     width: 100%; }
     @media screen and (min-width: 40em) {
-      .solution .container .feature {
-        width: 32%; } }
-    .solution .container .feature img {
+      .features .container .feature {
+        margin-top: 1rem; } }
+    @media screen and (min-width: 40em) {
+      .features .container .feature {
+        width: 31%; } }
+    .features .container .feature img {
       display: block;
-      margin-top: 3rem;
+      margin-top: 1rem;
       height: 60px; }
-      @media screen and (min-width: 40em) {
-        .solution .container .feature img {
-          margin: auto; } }
-    .solution .container .feature h3 {
+    .features .container .feature h3 {
       text-align: left;
       font-size: 1.2rem;
       line-height: 1.5rem; }
