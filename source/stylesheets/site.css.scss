@@ -116,11 +116,6 @@ header.typeset {
 
 .solution {
   .container {
-    @include breakpoint(break-1) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
     img.screencast {
       -webkit-border-radius: 1rem;
       -moz-border-radius: 1rem;
@@ -134,18 +129,32 @@ header.typeset {
       display: block;
       margin: 0 auto 2rem auto;
     }
+  }
+}
+
+.features {
+  margin: 0 3rem;
+  @include breakpoint(break-1) {
+    margin: 0 5rem;
+  }
+  .container {
+    @include breakpoint(break-1) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     .feature {
-      margin-top: 1em;
+      margin-top: 3rem;
       @include breakpoint(break-1) {
-        width: 32%;
+        margin-top: 1rem;
       }
       width: 100%;
+      @include breakpoint(break-1) {
+        width: 31%;
+      }
       img {
         display: block;
-        margin-top: 3rem;
-        @include breakpoint(break-1) {
-          margin: auto;
-        }
+        margin-top: 1rem;
         height: 60px;
       }
       h3 {
