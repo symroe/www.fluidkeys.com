@@ -129,15 +129,17 @@ function handleFormSubmit(event) {
     }
   }
 
-  ga('send', 'event', {
-    eventCategory: 'Sign up form',
-    eventAction: 'form_submit',
-    eventLabel: form.id,
-    hitCallback: function() {
-      console.debug("Got GA event hit callback");
-      submitForm();
-    }
-  });
+  if (typeof ga !== "undefined") {
+    ga('send', 'event', {
+      eventCategory: 'Sign up form',
+      eventAction: 'form_submit',
+      eventLabel: form.id,
+      hitCallback: function() {
+        console.debug("Got GA event hit callback");
+        submitForm();
+      }
+    });
+  };
 
 }
 
