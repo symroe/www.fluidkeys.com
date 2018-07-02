@@ -103,33 +103,42 @@ function setupEventHandlers() {
   }
 }
 
+function googleAnalyticsIsLoaded() {
+  return typeof ga !== "undefined";
+}
+
 function handleFormSubmit(event) {
-  // this is a bit tricksy, since submitting forms causes the page to unload
-  // and stop javascript running.
-  // See:
-  // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
 
-  var form = event.target,
-      // Keeps track of whether or not the form has been submitted.
-      // This prevents the form from being submitted twice in cases
-      // where `hitCallback` fires normally.
-      formSubmitted = false;
+  if(googleAnalyticsIsLoaded()) {
+    console.debug("Google analytics is loaded, firing form submit event");
 
-  // Prevents the browser from submitting the form
-  // and thus unloading the current page.
-  event.preventDefault();
+    // this is a bit tricksy, since submitting forms causes the page to unload
+    // and stop javascript running, we have to prevent the form submit,
+    // fire the GA tracking event and have it submit the form on success.
+    //
+    // *But* if the GA tracking event fails, the form won't be submitted, so
+    // we need to schedule it to happen automatically as a fallback.
+    //
+    // See:
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
 
-  setTimeout(submitForm, 1000);  // in case the GA hit callback never fires
+    var form = event.target,
+        formSubmitted = false; // prevent submitting the form twice
 
-  function submitForm() {
-    if (!formSubmitted) {
-      formSubmitted = true;
-      console.log("calling form.submit()");
-      form.submit();
+    // Prevents the browser from submitting the form
+    // and thus unloading the current page.
+    event.preventDefault();
+
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        console.log("calling form.submit()");
+        form.submit();
+      }
     }
-  }
 
-  if (typeof ga !== "undefined") {
+    setTimeout(submitForm, 1000);  // in case the GA hitCallback never fires
+
     ga('send', 'event', {
       eventCategory: 'Sign up form',
       eventAction: 'form_submit',
@@ -139,7 +148,9 @@ function handleFormSubmit(event) {
         submitForm();
       }
     });
-  };
+  } else {
+    console.debug("No Google Analytics, not preventing form submit");
+  }
 
 }
 
