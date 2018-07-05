@@ -1,4 +1,6 @@
-# Middleman Template
+# Fluidkeys Marketing Page
+
+A simple brochure page for Fluidkeys.
 
 ## How to use this
 
