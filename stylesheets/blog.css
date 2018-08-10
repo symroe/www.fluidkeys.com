@@ -594,8 +594,9 @@ header.typeset {
       background-color: #d33d5c;
       color: #ffffff;
       border-radius: 3px;
-      -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4), #232732 0px 0px 1px inset;
-              box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4), #232732 0px 0px 1px inset;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 2px 5px #232732;
+      box-shadow: 0 2px 5px #232732;
       -webkit-transition: all 0.15s linear;
       transition: all 0.15s linear;
       outline: none;
@@ -607,5 +608,5 @@ header.typeset {
       .blog form div input[type="submit"]:hover, .blog form div input[type="submit"]:focus {
         background: #3DA450;
         border: 0;
-        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), #505050 0px 0px 1px inset;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), #505050 0px 0px 1px inset; }
+        -webkit-box-shadow: 0 2px 5px #232732;
+        box-shadow: 0 2px 5px #232732; }
