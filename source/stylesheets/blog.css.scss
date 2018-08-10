@@ -1,0 +1,85 @@
+@import "sassline-base";
+
+$white: #ffffff;
+$dark-grey: #232732;
+$light-grey: #DDDDDD;
+$button-primary: #d33d5c;
+$button-hover: #3DA450;
+
+header.typeset {
+  background: $dark-grey;
+  padding: 1rem;
+  h1 {
+    color: $white;
+    font-size: 1.5em;
+  }
+}
+
+.blog {
+  margin: 1rem;
+  
+  @include breakpoint(break-2) {
+    margin: 1rem auto;
+    max-width: 60%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    border-bottom: 1px solid $light-grey;
+  }
+
+  strong {
+    letter-spacing: -0.2px;
+  }
+
+  form {
+    @include breakpoint(break-2) {
+      display: flex;
+      align-items: flex-end;
+    }
+    div {
+      input[type="email"] {
+        font-size: 1em;
+        border: 1px solid $dark-grey;
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+        @include breakpoint(break-2) {
+          padding: 0.5rem;
+          margin: 0 1rem 0 0;
+          width: 20rem;
+        }
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1em;
+        display: block;
+        @include breakpoint(break-2) {
+          padding: 0.6rem 1.5rem;
+          width: 10rem;
+        }
+        text-align: center;
+        border: 0;
+        background-color: $button-primary;
+        color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), $dark-grey 0px 0px 1px inset;
+        transition: all 0.15s linear;
+        outline: none;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          background: $button-hover;
+          border: 0;
+          box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5), #505050 0px 0px 1px inset;
+        }
+      }
+    }
+    margin-bottom: 1rem;
+  }
+}
