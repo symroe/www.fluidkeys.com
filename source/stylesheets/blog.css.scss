@@ -6,6 +6,30 @@ $light-grey: #DDDDDD;
 $button-primary: #d33d5c;
 $button-hover: #3DA450;
 
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
 header.typeset {
   background: $dark-grey;
   padding: 1rem;
@@ -67,8 +91,8 @@ header.typeset {
         border: 0;
         background-color: $button-primary;
         color: #ffffff;
-        border-radius: 3px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), $dark-grey 0px 0px 1px inset;
+        @include rounded(3px);
+        @include box-shadow(0, 2px, 5px, $dark-grey);
         transition: all 0.15s linear;
         outline: none;
         cursor: pointer;
@@ -76,7 +100,7 @@ header.typeset {
         &:focus {
           background: $button-hover;
           border: 0;
-          box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5), #505050 0px 0px 1px inset;
+          @include box-shadow(0, 2px, 5px, $dark-grey);
         }
       }
     }
