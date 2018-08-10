@@ -11,6 +11,9 @@ set :relative_links, true
 
 activate :directory_indexes
 
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true
+
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   deploy.branch   = 'gh-pages'
