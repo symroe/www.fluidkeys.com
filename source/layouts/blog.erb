@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= current_page.data.title %></title>
+    <meta name="description" content="Implement Best Security Practices and Demonstrate Your Team’s Expertise With PGP. Sign Up Now!">
+    <meta name="description" content="Fluidkeys makes it easy to implement the best security practices and demonstrate your team's expertise with PGP. Sign up now!" />
+    <%= stylesheet_link_tag 'stylesheets/blog' %>
+  </head>
+  <body>
+    <header class="typeset">
+      <h1>Fluidkeys</h1>
+    </header>
+    <section class="typeset blog">
+      <%= yield %>
+    </section>
+    <%= partial "analytics" %>
+  </body>
+</html>
