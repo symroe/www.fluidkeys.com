@@ -55,3 +55,5 @@ Our first move is to build Fluidkeys, a wrapper for GnuPG. Our aim is to get a f
 We’ll then get it into the hands of some developers and see what they make of it.
 
 If it sounds like something you’re interesting in trying out and your on a Mac or Linux machine, [we’d love your feedback](mailto:idrysdale@gmail.com)!
+
+— Ian
