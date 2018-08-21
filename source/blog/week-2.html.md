@@ -3,9 +3,7 @@ layout: blog
 ---
 
 # Week 2:
-# Fluidkeys weeknotes week #2
-
-_Recap: Ian and I are building Fluidkeys, software that helps teams protect themselves with strong encryption. Fluidkeys builds on the OpenPGP standard and is compatible with other OpenPGP software._
+Recap: Ian and I are building Fluidkeys, software that helps teams protect themselves with strong encryption. Fluidkeys builds on the OpenPGP standard and is compatible with other OpenPGP software.
 
 ## The short version
 
