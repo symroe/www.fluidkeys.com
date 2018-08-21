@@ -561,6 +561,10 @@ header.typeset {
   .blog h2 {
     font-size: 1.4rem;
     border-bottom: 1px solid #DDDDDD; }
+  .blog h3 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    border-bottom: 1px solid #DDDDDD; }
   .blog strong {
     letter-spacing: -0.2px; }
   .blog form {
