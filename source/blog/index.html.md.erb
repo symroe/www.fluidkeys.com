@@ -8,5 +8,7 @@ We send out a update on our work each week. You can sign up or read the archives
 
 <%= partial "blog/weeknotes_signup_form"  %>
 
-* [Week 1](/blog/week-1) — Friday 10th August 2018
-* [Week 2](/blog/week-2) — Tuesday 21st August 2018
+
+<% blog.articles.each do |article| %>
+* [<%= article.title %>](<%= article.url %>) — <%= article.date.strftime('%A %e %b %Y') %>
+<% end %>
