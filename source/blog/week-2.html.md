@@ -143,7 +143,7 @@ It's not infallible, but it protects against attacks on Github accounts like the
 
 Fluidkeys v0.1.0 is *furiously minimal*, but we'd really appreciate your thoughts on what we've built so far.
 
-If you'd like to test drive it, head over to [Github](https://github.com/fluidkeys/fluidkeys.com) and follow the install instructions there.
+If you'd like to test drive it, head over to [Github](https://github.com/fluidkeys/fluidkeys) and follow the install instructions there.
 
 *All* feedback is welcome, pop us an email to [paul@paulfurley.com](mailto:paul@paulfurley.com) and [idrysdale@gmail.com](mailto:idrysdale@gmail.com)
 
