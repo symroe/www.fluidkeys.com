@@ -20,3 +20,8 @@ activate :deploy do |deploy|
 end
 
 activate :livereload
+
+activate :blog do |blog|
+  blog.prefix = "blog"
+  blog.permalink = "{title}.html"
+end
